@@ -1,6 +1,6 @@
 {
   "name": "espurino-vsc-templ",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Template project for Espurino integrated with TSC + VSC",
   "main": "App.js",
   "scripts": {

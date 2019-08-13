@@ -1,5 +1,4 @@
 {
     "port": "COM5",
-    "speed": 115200,
-    "file": "./Output.js"
+    "speed": 115200    
 }
