@@ -1,0 +1,15 @@
+{
+  "name": "espurino-vsc-templ",
+  "version": "1.0.0",
+  "description": "Template project for Espurino integrated with TSC + VSC",
+  "main": "App.js",
+  "scripts": {
+    "upload": "node ./.esp_utils/upload.js",
+    "console": "node ./.esp_utils/console.js"
+  },
+  "author": "Krzysztof Heim",
+  "license": "MIT",
+  "devDependencies": {
+    "espruino": "0.1.28"
+  }
+}

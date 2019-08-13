@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "outFile": "Output.js",
+        "target": "es6",
+        "removeComments": true        
+    },
+    "include": [
+        "./.esp_utils/espruino.d.ts",
+        "./src/*.ts"
+    ]
+}
