@@ -9,7 +9,7 @@ const cfg = {
 };
 
 function onInit() {
-    blink(500);
+    blink(1000);
 
     if (cfg.wifi.ssid) {
         const wifi = require("Wifi");
@@ -22,7 +22,7 @@ function onInit() {
     }
 
     setInterval(() => {
-        console.log(((E.getTemperature() - 32) / 1.8).toFixed(1));
-    }, 2000);
+        console.log(`chip temp = ${((E.getTemperature() - 32) / 1.8).toFixed(1)} C`);
+    }, 5000);
 }
 
