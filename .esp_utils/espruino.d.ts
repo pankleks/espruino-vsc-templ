@@ -8,15 +8,23 @@ declare interface Object {
     removeListener(event: string, listener: any): any;
 }
 
+declare interface IIPInfo {
+    ip: string;
+    netmask: string;
+    gw: string;
+    mac: string;
+}
+
 declare interface Wifi {
     connect(ssid: string, options: any, callback: (err: any) => any): any;
+    getIP(): IIPInfo
 }
 
 declare interface IMQTTClient {
     on(event: "connected" | "message" | "published" | "disconnected", fn: (...p: any[]) => any): void;
     subscribe(topic: string): void;
     publish(topic: string, payload: string): void;
-    connect();
+    connect(): void;
 }
 
 declare interface TinyMQTT {
