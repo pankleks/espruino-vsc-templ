@@ -4,6 +4,10 @@ declare function require<T extends any>(file: string): T;
 declare function require(file: "Wifi"): Wifi;
 declare function require(file: "tinyMQTT"): TinyMQTT;
 
+declare namespace ESP32 {
+    function deepSleep(us: number, option?: 0 | 1 | 2 | 4): void;
+}
+
 declare interface Object {
     removeListener(event: string, listener: any): any;
 }
