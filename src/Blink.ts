@@ -1,7 +1,10 @@
-function blink(ms: number) {
+function blink(pin: Pin | number, ms: number, ledT?: number) {
+    if (typeof ledT === "number")
+        clearInterval(ledT);
+
     let ledOn = false;
     return setInterval(function () {
-        digitalWrite(cfg.pin.led1, ledOn);
+        digitalWrite(pin, ledOn);
         ledOn = !ledOn;
     }, ms);
 }

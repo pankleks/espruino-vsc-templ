@@ -9,7 +9,7 @@ const cfg = {
 };
 
 function onInit() {
-    blink(1000);
+    blink(cfg.pin.led1, 1000);
 
     if (cfg.wifi.ssid) {
         const wifi = require("Wifi");

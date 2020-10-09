@@ -3,6 +3,9 @@
 declare function require<T extends any>(file: string): T;
 declare function require(file: "Wifi"): Wifi;
 declare function require(file: "tinyMQTT"): TinyMQTT;
+declare function require(file: "DHT11"): DHT;
+declare function require(file: "DHT22"): DHT;
+//declare function require(file: "ESP8266"): ESP8266;
 
 declare namespace ESP32 {
     function deepSleep(us: number, option?: 0 | 1 | 2 | 4): void;
@@ -25,14 +28,23 @@ declare interface Wifi {
 }
 
 declare interface IMQTTClient {
-    on(event: "connected" | "message" | "published" | "disconnected", fn: (...p: any[]) => any): void;
+    on(event: "connected" | "published" | "disconnected", fn: (...p: any[]) => any): void;
+    on(event: "message", fn: (msg: { topic: string, message: string }) => any): void;
     subscribe(topic: string): void;
     publish(topic: string, payload: string): void;
     connect(): void;
 }
 
 declare interface TinyMQTT {
-    create(server: string, cfg: any): IMQTTClient;
+    create(server: string, cfg: { port?: number, username?: string, password?: string }): IMQTTClient;
+}
+
+declare interface IDHTClient {
+    read(fn: (reading: { temp: number, rh: number, err: boolean, checksumError: boolean, raw: string }) => void, readCount?: number): void;
+}
+
+declare interface DHT {
+    connect(pin: number): IDHTClient;
 }
 
 declare module "InfluxDB" {

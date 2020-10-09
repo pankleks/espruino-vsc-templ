@@ -1,1 +1,2 @@
 - 0.1.0     8/13/2019   base
+- 0.1.1     10/9/2020   espruino dep. up, added DHT types to .d.ts
