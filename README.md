@@ -19,6 +19,7 @@ This is attepmt to use VSC as alternative IDE for Espruino.
 1. open `NPM SCRIPTS` buttom of VSC explorer tree
 1. use `upload` to send upload to the board
 1. use `console` to open REPL
+1. if `upload` task fail due to port busy, please close `console` task
 
 > you can adjust `tsconfig.json` to change `target` to `es5` if some of `es6` fatures are not yet supported by Espruino
 
