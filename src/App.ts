@@ -9,15 +9,21 @@ const cfg = {
 };
 
 function onInit() {
+    console.log(`board serial: ${getSerial()}`);
+
     blink(cfg.pin.led1, 1000);
 
     if (cfg.wifi.ssid) {
+        console.log("connecting wifi");
+
         const wifi = require("Wifi");
         wifi.connect(cfg.wifi.ssid, { password: cfg.wifi.pass }, (err) => {
             if (err)
-                console.error(`can't connect wifi -> ${err}`);
-            else
+                console.log(`can't connect wifi -> ${err}`);
+            else {
                 console.log(`wifi ok -> ${wifi.getIP().ip}`);
+                // todo: code here
+            }
         });
     }
 
