@@ -4,7 +4,7 @@ const cfg = {
         pass: ""
     },
     pin: {
-        led1: 13
+        led1: 2
     }
 };
 

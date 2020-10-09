@@ -10,6 +10,6 @@
   "author": "Krzysztof Heim",
   "license": "MIT",
   "devDependencies": {
-    "espruino": "0.1.28"
+    "espruino": "0.1.32"
   }
 }
