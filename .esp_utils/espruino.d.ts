@@ -1,10 +1,12 @@
 // based on work of <https://github.com/stasberkov>
+// v0.1.1
 
 declare function require<T extends any>(file: string): T;
 declare function require(file: "Wifi"): Wifi;
 declare function require(file: "tinyMQTT"): TinyMQTT;
 declare function require(file: "DHT11"): DHT;
 declare function require(file: "DHT22"): DHT;
+declare function require(file: "HD44780"): HD44780;
 //declare function require(file: "ESP8266"): ESP8266;
 
 declare namespace ESP32 {
@@ -13,6 +15,17 @@ declare namespace ESP32 {
 
 declare interface Object {
     removeListener(event: string, listener: any): any;
+}
+
+declare interface HD44780 {
+    connectI2C(i2c: I2C, addr?: number): HD44780LCD;
+}
+
+declare interface HD44780LCD {
+    clear(): void;
+    print(value: any): void;
+    cursor(block: boolean): void;
+    setCursor(x: number, y: number): void;    
 }
 
 declare interface IIPInfo {
